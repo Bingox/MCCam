@@ -425,7 +425,9 @@ public class CameraActivity extends Activity implements OnClickListener, Surface
 			List<Camera.Size> picSizes = params.getSupportedPictureSizes();
 			Camera.Size mSize = picSizes.get(0);
 			for(Camera.Size s:picSizes){
-				if(s.width > mSize.width){
+				Log.d("camera_size", "w" + s.width + ",h" + s.height);
+				int tmp = s.width*s.height;
+				if(tmp > 300000 && tmp < 340000){
 					mSize = s;
 				}
 			}
